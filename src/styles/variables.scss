@@ -1,0 +1,35 @@
+// SCSS Variables
+$primary-color: #aa3bff;
+$secondary-color: #6b6375;
+$background-color: #fff;
+$border-color: #e5e4e7;
+
+$font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+$font-mono: ui-monospace, Consolas, monospace;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-base {
+  padding: 0.5rem 1rem;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-family: $font-sans;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+    border-color: $primary-color;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
