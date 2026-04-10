@@ -11,16 +11,25 @@ export const theme = {
 
 export const availableThemes: Theme[] = ['light', 'dark'];
 
+const isTheme = (value: string): value is Theme => {
+    return availableThemes.includes(value as Theme);
+};
+
 export const useTheme = () => {
     const storage: LocalStorageService = localStorageService;
     const ThemeStorageKey = 'APP:SETTINGS:THEME';
     const [theme, setThemeState] = useState<Theme>(() => {
-        if (document.body.dataset.theme) {
-            return document.body.dataset.theme as Theme;
+        const datasetTheme = document.body.dataset.theme;
+        if (datasetTheme && isTheme(datasetTheme)) {
+            return datasetTheme;
         }
 
         const storedTheme = storage.getItem<Theme>(ThemeStorageKey);
-        return storedTheme || 'light';
+        if (storedTheme && isTheme(storedTheme)) {
+            return storedTheme;
+        }
+
+        return 'light';
     });
 
     useEffect(() => {
