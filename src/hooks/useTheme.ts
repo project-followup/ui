@@ -3,7 +3,7 @@ import { localStorageService, type LocalStorageService } from "../infrastructure
 
 export type Theme = 'light' | 'dark';
 
-export const theme = {
+export const themeTokens = {
     backgroundColors: {
         primary: 'var(--color-bg-primary)',
     }
