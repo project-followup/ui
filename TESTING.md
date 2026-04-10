@@ -40,8 +40,7 @@ src/
 │   ├── helpers.ts
 │   └── helpers.test.ts
 ├── test/
-│   ├── setup.ts          # Test configuration
-│   └── test-utils.tsx    # Custom render utilities
+│   └── setup.ts          # Test configuration
 ├── App.tsx
 └── App.test.tsx
 ```
