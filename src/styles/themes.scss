@@ -1,7 +1,15 @@
-// :root {
-// }
+body[data-theme="light"] {
+    // Background colors
+    --color-bg-primary: 0 0% 100%;
 
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//   }
-// }
+    // Text colors
+    --color-text-primary: 0 0% 0%;
+}
+
+body[data-theme="dark"] {
+    // Background colors
+    --color-bg-primary: 0 0% 20%;
+
+    // Text colors
+    --color-text-primary: 0 0% 100%;
+}
