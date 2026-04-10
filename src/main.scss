@@ -1,0 +1,7 @@
+@use './styles/reset.scss';
+@use './styles/themes.scss';
+
+body {
+    background-color: hsl(var(--color-bg-primary));
+    color: hsl(var(--color-text-primary));
+}

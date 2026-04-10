@@ -1,0 +1,92 @@
+name: GC
+
+on:
+  pull_request:
+    branches: [ main, develop, release/*, hotfix/* ]
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run linting
+      run: npm run lint
+
+    - name: Build project
+      run: npm run build
+
+    - name: Run tests with coverage
+      run: npm run test:coverage
+
+    - name: Upload test results
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Vitest Tests (${{ matrix.node-version }})
+        path: test-results/junit.xml
+        reporter: java-junit
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4
+      if: matrix.node-version == '20.x'
+      with:
+        files: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+    - name: Upload coverage to GitHub
+      uses: actions/upload-artifact@v4
+      if: matrix.node-version == '20.x'
+      with:
+        name: coverage-report
+        path: coverage/
+        retention-days: 30
+
+    - name: Comment PR with coverage
+      uses: romeovs/lcov-reporter-action@v0.3.1
+      if: github.event_name == 'pull_request' && matrix.node-version == '20.x'
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        lcov-file: ./coverage/lcov.info
+      continue-on-error: true
+
+  status-check:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [test]
+    
+    steps:
+    - name: Check all jobs status
+      if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+      run: |
+        echo "❌ Code verification failed"
+        echo "Test results: ${{ toJson(needs.test.result) }}"
+        exit 1
+    
+    - name: All checks passed
+      run: |
+        echo "✅ All code verification checks passed"
+        echo "Ready for merge! 🎉"
