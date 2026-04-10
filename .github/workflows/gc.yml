@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [ main, develop, release/*, hotfix/* ]
 
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
