@@ -2,8 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './main.scss'
-import { AuthenticatedPage } from './pages/authenticated/authenticated'
-import ThemeSwitcher from './theme-switcher.tsx'
 import App from './App.tsx'
 import AppLayoutComponent from './AppLayout.tsx'
 
@@ -15,10 +13,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <App />
-      },
-      {
-        path: '/authenticated',
-        element: <AuthenticatedPage />
       }],
   }
 ]);
@@ -31,7 +25,6 @@ async function bootstrapApp() {
     const root = createRoot(rootEl);
     root.render(
       <StrictMode>
-        <ThemeSwitcher />
         <RouterProvider router={router} />
       </StrictMode>,
     );
