@@ -7,7 +7,7 @@ const AUTH_URL = 'http://localhost:4001/auth'
 
 export function LandingPage() {
   return (
-    <main className="landing-page">
+    <div className="landing-page">
       <section className="landing-page__hero">
         <h1 className="landing-page__title">Project FollowUp</h1>
         <p className="landing-page__tagline">
@@ -43,6 +43,6 @@ export function LandingPage() {
           <Button size="large">Sign in</Button>
         </a>
       </section>
-    </main>
+    </div>
   )
 }
