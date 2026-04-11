@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './main.scss'
 import App from './App.tsx'
 import AppLayoutComponent from './AppLayout.tsx'
+import ThemeSwitcher from './theme-switcher.tsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ async function bootstrapApp() {
     const root = createRoot(rootEl);
     root.render(
       <StrictMode>
+        <ThemeSwitcher />
         <RouterProvider router={router} />
       </StrictMode>,
     );

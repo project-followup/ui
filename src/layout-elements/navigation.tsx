@@ -1,7 +1,7 @@
-import ThemeSwitcher from "../theme-switcher";
-
 export default function NavigationComponent() {
     return (<nav>
-        <ThemeSwitcher />
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
     </nav>);
 }
