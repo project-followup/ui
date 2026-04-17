@@ -1,5 +1,5 @@
 import { Moon, Sun } from 'lucide-react';
-import { availableThemes, type Theme, useTheme } from './hooks/useTheme';
+import { availableThemes, type Theme, useTheme } from './shared/hooks/use-theme';
 
 interface ThemeRepresentationProps {
   currentTheme: Theme;
@@ -14,10 +14,10 @@ function ThemeRepresentation(props: ThemeRepresentationProps) {
   }
 
   return (
-    <>
+    <div className="theme-switcher">
       {theme === 'light' ? <Sun onClick={onClick} /> : null}
       {theme === 'dark' ? <Moon onClick={onClick} /> : null}
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,15 @@
+main.landing-page {
+    min-block-size: 100dvh;
+}
+
+main.app-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-block-size: 100dvh;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}

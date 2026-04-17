@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import * as types from './useTheme'
+import * as types from './use-theme'
 
 describe('useTheme Hook', () => {
     it('should have dark and light themes defined', () => {

@@ -5,6 +5,6 @@ import App from './App'
 describe('App Component', () => {
   it('renders the main heading', () => {
     render(<App />)
-    expect(screen.getByText(/Project FollowUp/i)).toBeInTheDocument()
+    expect(screen.getByText(/authenticated/i)).toBeInTheDocument()
   })
 })

@@ -8,4 +8,7 @@ export default defineConfig({
     port: 4000,
     open: false,
   },
+  resolve: {
+    tsconfigPaths: true,
+  },
 })
