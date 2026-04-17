@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { localStorageService, type LocalStorageService } from "../infrastructure/localStorageService";
+import { localStorageService, type LocalStorageService } from "../../infrastructure/localStorageService";
 
 export type Theme = 'light' | 'dark';
 

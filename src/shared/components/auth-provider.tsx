@@ -1,7 +1,7 @@
-import Keycloak from "keycloak-js";``
+import Keycloak from "keycloak-js"; ``
 import type { AuthContextValue, KeycloakUser } from "@shared/types/auth";
 import { createContext, type ReactNode, useEffect, useState } from "react";
-import getConfig from "@shared/services/configuration";
+import { useConfig } from "@shared/hooks/use-config";
 import { authenticateUser, getCurrentUser, hasAnyRole, hasRole, initializeKeycloak, logout } from "@shared/services/auth";
 
 export const AuthContext = createContext<AuthContextValue | null>(null);
@@ -15,11 +15,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<KeycloakUser | null>(null);
   const [keycloak, setKeycloak] = useState<Keycloak | null>(null);
+  
+  const config = useConfig();
 
   useEffect(() => {
     const initializeAuth = async () => {
       try {
-        const config = getConfig();
         const keycloakInstance = initializeKeycloak(config);
         setKeycloak(keycloakInstance);
 

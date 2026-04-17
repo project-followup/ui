@@ -1,5 +1,5 @@
 import { Moon, Sun } from 'lucide-react';
-import { availableThemes, type Theme, useTheme } from './hooks/useTheme';
+import { availableThemes, type Theme, useTheme } from './shared/hooks/use-theme';
 
 interface ThemeRepresentationProps {
   currentTheme: Theme;
