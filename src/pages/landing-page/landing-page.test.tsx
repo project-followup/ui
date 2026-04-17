@@ -2,15 +2,18 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { LandingPage } from './landing-page'
 import { describe, expect, it } from 'vitest'
-import { AuthProvider } from '@shared/components/auth-provider'
+import { AuthContext } from '@shared/components/auth-provider'
+import { ConfigContext } from '@shared/components/config-provider'
 
 function renderLandingPage() {
   return render(
-    <AuthProvider>
-      <MemoryRouter>
-        <LandingPage />
-      </MemoryRouter>
-    </AuthProvider>
+    <ConfigContext.Provider value={{ keycloak: { url: 'http://localhost', realm: 'test', clientId: 'test-client' } }}>
+      <AuthContext.Provider value={{ isAuthenticated: false, isLoading: false, user: null, keycloak: null, login: () => {}, logout: () => {}, hasRole: _ => false, hasAnyRole: _ => false, getToken:() => 'TOKEN' }}>
+        <MemoryRouter>
+          <LandingPage />
+        </MemoryRouter>
+      </AuthContext.Provider>
+    </ConfigContext.Provider>
   )
 }
 
