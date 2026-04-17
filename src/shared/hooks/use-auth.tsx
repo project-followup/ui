@@ -1,4 +1,4 @@
-import { AuthContext } from "@shared/components/auth-provider";
+import { AuthContext } from "@shared/types/auth";
 import type { AuthContextValue } from "@shared/types/auth";
 import { useContext } from "react";
 

@@ -1,4 +1,4 @@
-import { ConfigContext } from "@shared/components/config-provider";
+import { ConfigContext } from "@shared/types/configuration";
 import { useContext } from "react";
 
 export const useConfig = () => {

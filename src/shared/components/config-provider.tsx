@@ -1,8 +1,6 @@
-import type { ApplicationConfiguration } from "@shared/types/configuration";
-import { createContext, useEffect, useState } from "react";
+import { type ApplicationConfiguration, ConfigContext } from "@shared/types/configuration";
+import { useEffect, useState } from "react";
 import LoadingSpinner from "./loading-spinner";
-
-export const ConfigContext = createContext<ApplicationConfiguration | null>(null);
 
 export const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [config, setConfig] = useState<ApplicationConfiguration | null>(null);

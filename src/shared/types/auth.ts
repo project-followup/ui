@@ -1,4 +1,5 @@
 import Keycloak from 'keycloak-js';
+import { createContext } from 'react';
 
 export interface KeycloakUser {
   id: string;
@@ -20,3 +21,5 @@ export interface AuthContextValue {
   hasAnyRole: (roles: string[]) => boolean;
   getToken: () => string | null;
 }
+
+export const AuthContext = createContext<AuthContextValue | null>(null);

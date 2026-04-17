@@ -1,10 +1,8 @@
-import Keycloak from "keycloak-js"; ``
-import type { AuthContextValue, KeycloakUser } from "@shared/types/auth";
-import { createContext, type ReactNode, useEffect, useState } from "react";
+import Keycloak from "keycloak-js";
+import { type AuthContextValue, type KeycloakUser, AuthContext } from "@shared/types/auth";
+import { type ReactNode, useEffect, useState } from "react";
 import { useConfig } from "@shared/hooks/use-config";
 import { authenticateUser, getCurrentUser, hasAnyRole, hasRole, initializeKeycloak, logout } from "@shared/services/auth";
-
-export const AuthContext = createContext<AuthContextValue | null>(null);
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -41,7 +39,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     };
 
     initializeAuth();
-  }, []);
+  }, [config]);
 
   const handleLogin = () => {
     if (keycloak) {
