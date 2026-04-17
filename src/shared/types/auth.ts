@@ -1,4 +1,4 @@
-import Keycloak from 'keycloak-js';
+import type Keycloak from 'keycloak-js';
 import { createContext } from 'react';
 
 export interface KeycloakUser {

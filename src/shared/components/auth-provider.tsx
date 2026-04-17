@@ -1,4 +1,4 @@
-import Keycloak from "keycloak-js";
+import type Keycloak from "keycloak-js";
 import { type AuthContextValue, type KeycloakUser, AuthContext } from "@shared/types/auth";
 import { type ReactNode, useEffect, useState } from "react";
 import { useConfig } from "@shared/hooks/use-config";

@@ -15,11 +15,10 @@ export default function AppLayoutComponent() {
 
   return (
     <main className='app-layout'>
-      {isAuthenticated && <NavigationComponent />}
+      <NavigationComponent />
       <div>
-        {!isAuthenticated && <LandingPage />}
-        {isAuthenticated && <Outlet />}
+        <Outlet />
       </div>
-      {isAuthenticated && <FooterComponent />}
+      <FooterComponent />
     </main>);
 }
