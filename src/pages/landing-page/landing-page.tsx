@@ -1,9 +1,10 @@
 import './landing-page.scss'
 import { Button } from '../../components/Button'
-
-const AUTH_URL = 'http://localhost:4001/auth'
+import { useAuth } from '@shared/hooks/use-auth';
 
 export function LandingPage() {
+    const { login } = useAuth();
+
     return (
         <div className='landing-page'>
             <section>
@@ -18,9 +19,7 @@ export function LandingPage() {
                 <p>
                     Sign in with your organisation account to access the dashboard.
                 </p>
-                <a href={AUTH_URL}>
-                    <Button size="large">Sign in</Button>
-                </a>
+                <Button size="large" onClick={login}>Sign in</Button>
             </section>
         </div >
     )

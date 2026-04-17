@@ -14,11 +14,12 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@types/keycloak-js": "^2.5.4",
+    "keycloak-js": "^26.2.3",
     "lucide-react": "^1.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.5.1",
-    "vite-tsconfig-paths": "^6.1.1"
+    "react-router-dom": "^7.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
