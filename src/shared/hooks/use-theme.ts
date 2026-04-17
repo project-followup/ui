@@ -5,7 +5,11 @@ export type Theme = 'light' | 'dark';
 
 export const themeTokens = {
     backgroundColors: {
-        primary: 'var(--color-bg-primary)',
+        primary: 'var(--backgroundColors-primary)',
+        panel: 'var(--backgroundColors-panel)',
+    },
+    textColors: {
+        primary: 'var(--textColors-primary)',
     }
 }
 

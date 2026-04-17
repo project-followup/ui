@@ -2,8 +2,8 @@
 @use "./styles/themes.scss";
 
 body {
-    background-color: hsl(var(--color-bg-primary));
-    color: hsl(var(--color-text-primary));
+    background-color: hsl(var(--backgroundColors-primary));
+    color: hsl(var(--textColors-primary));
 
     .theme-switcher {
         position: fixed;
