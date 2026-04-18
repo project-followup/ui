@@ -5,13 +5,6 @@ body {
     background-color: hsl(var(--backgroundColors-primary));
     color: hsl(var(--textColors-primary));
 
-    .theme-switcher {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-    }
-
     #root {
         width: 100%;
     }

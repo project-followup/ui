@@ -15,8 +15,8 @@ function ThemeRepresentation(props: ThemeRepresentationProps) {
 
   return (
     <div className="theme-switcher">
-      {theme === 'light' ? <Moon onClick={onClick} /> : null}
-      {theme === 'dark' ? <Sun onClick={onClick} /> : null}
+      {theme === 'light' ? <a href="#" onClick={onClick}><Moon /></a> : null}
+      {theme === 'dark' ? <a href="#" onClick={onClick}><Sun /></a> : null}
     </div>
   );
 }

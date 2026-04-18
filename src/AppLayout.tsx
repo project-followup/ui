@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { LandingPage } from "./pages/landing-page/landing-page";
+import { LandingPage } from "@pages/landing-page/landing-page";
 import './AppLayout.scss'
-import NavigationComponent from "./layout-elements/navigation";
-import FooterComponent from "./layout-elements/footer";
+import NavigationComponent from "@shared/components/navigation";
+import FooterComponent from "@shared/components/footer";
 import { useAuth } from "@shared/hooks/use-auth";
 import styled from '@emotion/styled';
 

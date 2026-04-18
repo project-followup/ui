@@ -15,7 +15,8 @@
     "noEmit": true,
     "paths": {
       "@assets/*": ["./src/assets/*"],
-      "@shared/*": ["./src/shared/*"]
+      "@shared/*": ["./src/shared/*"],
+      "@pages/*": ["./src/pages/*"],
     },
     "jsx": "react-jsx",
 
