@@ -31,8 +31,13 @@ function ThemeRepresentation(props: ThemeRepresentationProps) {
     return null;
   }
 
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    onClick();
+  }
+
   return (
-    <LinkStyled href="#" onClick={(e) => { e.preventDefault(); onClick(); }}>
+    <LinkStyled href="#" onClick={handleClick}>
       {theme === 'light' ? <Moon /> : null}
       {theme === 'dark' ? <Sun /> : null}
     </LinkStyled>
