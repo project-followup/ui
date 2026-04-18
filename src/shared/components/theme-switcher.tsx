@@ -1,5 +1,23 @@
 import { Moon, Sun } from 'lucide-react';
-import { availableThemes, type Theme, useTheme } from '@shared/hooks/use-theme';
+import styled from '@emotion/styled';
+import { availableThemes, type Theme, themeTokens, useTheme } from '@shared/hooks/use-theme';
+
+const LinkStyled = styled.a`
+    color: hsl(${themeTokens.textColors.primary});
+    text-decoration: none;
+    vertical-align: middle;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    &.active {
+        font-weight: bold;
+    }
+
+    &:hover {
+        background-color: hsl(${themeTokens.backgroundColors.panelHover});
+    }
+`;
 
 interface ThemeRepresentationProps {
   currentTheme: Theme;
@@ -14,10 +32,10 @@ function ThemeRepresentation(props: ThemeRepresentationProps) {
   }
 
   return (
-    <div className="theme-switcher">
-      {theme === 'light' ? <a href="#" onClick={onClick}><Moon /></a> : null}
-      {theme === 'dark' ? <a href="#" onClick={onClick}><Sun /></a> : null}
-    </div>
+    <LinkStyled href="#" onClick={onClick}>
+      {theme === 'light' ? <Moon /> : null}
+      {theme === 'dark' ? <Sun /> : null}
+    </LinkStyled>
   );
 }
 

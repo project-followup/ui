@@ -7,6 +7,7 @@ export const themeTokens = {
     backgroundColors: {
         primary: 'var(--backgroundColors-primary)',
         panel: 'var(--backgroundColors-panel)',
+        panelHover: 'var(--backgroundColors-panelHover)',
     },
     textColors: {
         primary: 'var(--textColors-primary)',

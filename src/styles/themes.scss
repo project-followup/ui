@@ -2,6 +2,7 @@ body[data-theme="light"] {
     // Background colors
     --backgroundColors-primary: 0 0% 100%;
     --backgroundColors-panel: 0 0% 95%;
+    --backgroundColors-panelHover: 0 0% 90%;
 
     // Text colors
     --textColors-primary: 0 0% 0%;
@@ -11,6 +12,7 @@ body[data-theme="dark"] {
     // Background colors
     --backgroundColors-primary: 0 0% 20%;
     --backgroundColors-panel: 0 0% 25%;
+    --backgroundColors-panelHover: 0 0% 30%;
 
     // Text colors
     --textColors-primary: 0 0% 100%;

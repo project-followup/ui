@@ -8,8 +8,6 @@ import ThemeSwitcher from "./theme-switcher";
 const TopBar = styled.div`
     background-color: hsl(${themeTokens.backgroundColors.panel});
     color: hsl(${themeTokens.textColors.primary});
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 `;
 
 const Navigation = styled.nav`
@@ -20,57 +18,58 @@ const Navigation = styled.nav`
     gap: 1rem;
 `;
 
-const MenuItems = styled.ul`
+const MenuItems = styled.div`
     list-style: none;
     display: flex;
-    gap: 1rem;
-    height: 3rem;
-    align-items: center;
 `;
 
 const NavLinkStyled = styled(NavLink)`
     color: hsl(${themeTokens.textColors.primary});
     text-decoration: none;
+    vertical-align: middle;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     &.active {
         font-weight: bold;
+    }
+
+    &:hover {
+        background-color: hsl(${themeTokens.backgroundColors.panelHover});
     }
 `;
 
 const Notifications = styled.ul`
     list-style: none;
     display: flex;
-    gap: 1rem;
-    height: 3rem;
     align-items: center;
     svg {
         height: 1.25rem;
         width: 1.25rem;
     }
-
-    a {
-    color: hsl(${themeTokens.textColors.primary});
 `;
 
 const Logo = styled.img`
-    height: 3rem;
+    height: 4rem;
 `;
 
 export default function NavigationComponent() {
 
     return (<TopBar>
         <Navigation>
-            <NavLinkStyled to="/">
+            <NavLink to="/">
                 <Logo src={logo} alt="Project FollowUp Logo" />
-            </NavLinkStyled>
+            </NavLink>
             <MenuItems>
-                <li><NavLinkStyled to="/">Home</NavLinkStyled></li>
-                <li><NavLinkStyled to="/projects">Projects</NavLinkStyled></li>
-                <li><NavLinkStyled to="/users">Users</NavLinkStyled></li>
-                <li><NavLinkStyled to="/projects/create">Create project</NavLinkStyled></li>
+                <NavLinkStyled to="/">Home</NavLinkStyled>
+                <NavLinkStyled to="/projects">Projects</NavLinkStyled>
+                <NavLinkStyled to="/users">Users</NavLinkStyled>
+                <NavLinkStyled to="/projects/create">Create project</NavLinkStyled>
             </MenuItems>
             <Notifications>
-                <Bell />
                 <NavLinkStyled to="/logout"><SquareArrowRightExit /></NavLinkStyled>
+                <NavLinkStyled to="/notifications"><Bell /></NavLinkStyled>
                 <ThemeSwitcher />
             </Notifications>
         </Navigation>

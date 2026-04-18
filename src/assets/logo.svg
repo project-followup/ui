@@ -15,9 +15,12 @@
             font- size: 15px;
         }
     </style>
-    <polygon points="10,10 70,10 90,30 90,90 10,90" fill="green" />
-    <polygon points="10,10 70,10 90,30 90,90 10,90" fill="yellow" stroke-width="1" stroke="black" mask="url(#Mask)" />
-    <polygon points="70,10 90,30 70,30" fill="yellow" stroke-width="1" stroke="black" />
-    <text x="15" y="50" fill="black">Project</text>
-    <text x="15" y="70" fill="black">FollowUp</text>
+    <g>
+        <polygon points="10,10 70,10 90,30 90,90 10,90" fill="green" />
+        <polygon points="10,10 70,10 90,30 90,90 10,90" fill="yellow" stroke-width="1" stroke="black"
+            mask="url(#Mask)" />
+        <polygon points="70,10 90,30 70,30" fill="yellow" stroke-width="1" stroke="black" />
+        <text x="15" y="50" fill="black">Project</text>
+        <text x="15" y="70" fill="black">FollowUp</text>
+    </g>
 </svg>
