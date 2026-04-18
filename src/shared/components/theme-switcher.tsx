@@ -32,7 +32,7 @@ function ThemeRepresentation(props: ThemeRepresentationProps) {
   }
 
   return (
-    <LinkStyled href="#" onClick={onClick}>
+    <LinkStyled href="#" onClick={(e) => { e.preventDefault(); onClick(); }}>
       {theme === 'light' ? <Moon /> : null}
       {theme === 'dark' ? <Sun /> : null}
     </LinkStyled>
