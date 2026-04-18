@@ -7,6 +7,7 @@ import AppLayoutComponent from './AppLayout.tsx'
 import ThemeSwitcher from '@shared/components/theme-switcher.tsx'
 import { AuthProvider } from '@shared/components/auth-provider.tsx'
 import { ConfigProvider } from '@shared/components/config-provider.tsx'
+import LogoutPage from './pages/logout/logout-page.tsx'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <App />
+      },
+      {
+        path: 'logout',
+        element: <LogoutPage />
       },
       {
         path: '*',

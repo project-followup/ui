@@ -14,7 +14,7 @@
     "moduleDetection": "force",
     "noEmit": true,
     "paths": {
-      "@shared": ["./src/shared"],
+      "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"]
     },
     "jsx": "react-jsx",

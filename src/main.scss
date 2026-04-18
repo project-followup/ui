@@ -15,21 +15,4 @@ body {
     #root {
         width: 100%;
     }
-
-    @media screen and (min-width: 768px) {
-        text-align: center;
-        #root {
-            margin: auto;
-            width: 80%;
-            text-align: left;
-        }
-    }
-    @media screen and (min-width: 915px) {
-        text-align: center;
-        #root {
-            margin: auto;
-            width: 60%;
-            text-align: left;
-        }
-    }
 }
