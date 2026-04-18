@@ -68,8 +68,8 @@ export default function NavigationComponent() {
                 <NavLinkStyled to="/projects/create">Create project</NavLinkStyled>
             </MenuItems>
             <Notifications>
-                <NavLinkStyled to="/logout"><SquareArrowRightExit /></NavLinkStyled>
-                <NavLinkStyled to="/notifications"><Bell /></NavLinkStyled>
+                <NavLinkStyled to="/logout" aria-label="Log out"><SquareArrowRightExit /></NavLinkStyled>
+                <NavLinkStyled to="/notifications" aria-label="View notifications"><Bell /></NavLinkStyled>
                 <ThemeSwitcher />
             </Notifications>
         </Navigation>
