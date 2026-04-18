@@ -21,9 +21,6 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "@shared/*": ["./src/shared/*"]
-    }
   },
   "include": [
     "*.config.ts"

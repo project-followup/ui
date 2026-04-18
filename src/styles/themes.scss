@@ -1,15 +1,19 @@
 body[data-theme="light"] {
     // Background colors
-    --color-bg-primary: 0 0% 100%;
+    --backgroundColors-primary: 0 0% 100%;
+    --backgroundColors-panel: 0 0% 95%;
+    --backgroundColors-panelHover: 0 0% 90%;
 
     // Text colors
-    --color-text-primary: 0 0% 0%;
+    --textColors-primary: 0 0% 0%;
 }
 
 body[data-theme="dark"] {
     // Background colors
-    --color-bg-primary: 0 0% 20%;
+    --backgroundColors-primary: 0 0% 20%;
+    --backgroundColors-panel: 0 0% 25%;
+    --backgroundColors-panelHover: 0 0% 30%;
 
     // Text colors
-    --color-text-primary: 0 0% 100%;
+    --textColors-primary: 0 0% 100%;
 }
