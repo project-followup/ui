@@ -59,7 +59,9 @@ export default function NavigationComponent() {
 
     return (<TopBar>
         <Navigation>
-            <Logo src={logo} alt="Project FollowUp Logo" />
+            <NavLinkStyled to="/">
+                <Logo src={logo} alt="Project FollowUp Logo" />
+            </NavLinkStyled>
             <MenuItems>
                 <li><NavLinkStyled to="/">Home</NavLinkStyled></li>
                 <li><NavLinkStyled to="/projects">Projects</NavLinkStyled></li>
