@@ -1,0 +1,1 @@
+export { default as TaskNameComponent } from "./components/task-name";

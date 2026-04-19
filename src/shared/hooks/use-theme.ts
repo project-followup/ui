@@ -8,6 +8,10 @@ export const themeTokens = {
         primary: 'var(--backgroundColors-primary)',
         panel: 'var(--backgroundColors-panel)',
         panelHover: 'var(--backgroundColors-panelHover)',
+
+    },
+    generalColors: {
+        information: 'var(--generalColors-information)',
     },
     textColors: {
         primary: 'var(--textColors-primary)',
