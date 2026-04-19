@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
-import type { Task } from "@ft_tasks/types/models";
 import { themeTokens } from "@shared/hooks/use-theme";
+import { type TaskStatus } from "@ft_tasks/types/models";
+
+export interface Task {
+    id: string;
+    name: string;
+    status: TaskStatus;
+    projectId: string;
+}
 
 export interface TaskNameProps {
     task: Task;

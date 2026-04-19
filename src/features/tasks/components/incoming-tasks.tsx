@@ -1,34 +1,16 @@
 import styled from "@emotion/styled";
 import { themeTokens } from "@shared/hooks/use-theme";
-import { TriangleAlert } from "lucide-react";
 import * as projects from "@ft_projects/index";
 import * as projectModels from "@ft_projects/types/models";
 import * as models from "@ft_tasks/types/models";
 import { taskSearchService } from "@ft_tasks/index";
 import { useEffect, useState } from "react";
 
-const OverdueTasksPanel = styled.div`
+const IncomingTasksPanel = styled.div`
     padding: 1rem;
 
-    @keyframes changeColor {
-        0% {
-            background-color: hsl(${themeTokens.generalColors.error});
-        }
-
-        50% {
-            background-color: hsl(${themeTokens.backgroundColors.panelHover});
-        }
-
-        100% {
-            background-color: hsl(${themeTokens.generalColors.error});
-        }
-    }
-
     & > h3 {
-        background-color: hsl(${themeTokens.generalColors.error});
-        animation: changeColor ease;
-        animation-iteration-count: infinite;
-        animation-duration: 2s;
+        background-color: hsl(${themeTokens.backgroundColors.panelHover});
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         margin-bottom: 1rem;
@@ -41,10 +23,10 @@ const ProjectsList = styled.div`
     grid-template-columns: repeat(3, minmax(200px, 1fr));
 `;
 
-export default function OverdueTasksComponent() {
-    const [overdueTasks, setOverdueTasks] = useState<models.Task[]>([]);
+export default function IncomingTasksComponent() {
+    const [incomingTasks, setIncomingTasks] = useState<models.Task[]>([]);
 
-    const projectIds = overdueTasks.reduce((acc, task) => {
+    const projectIds = incomingTasks.reduce((acc, task) => {
         if (!acc.includes(task.projectId)) {
             acc.push(task.projectId);
         }
@@ -52,7 +34,7 @@ export default function OverdueTasksComponent() {
     }, [] as string[]);
 
     const projectsList = projectIds.map(id => {
-        const tasks = overdueTasks.filter(task => task.projectId === id);
+        const tasks = incomingTasks.filter(task => task.projectId === id);
         return {
             id,
             name: `Project ${id}`,
@@ -62,19 +44,19 @@ export default function OverdueTasksComponent() {
     });
 
     useEffect(() => {
-        taskSearchService.getOverdueTasks().then(r => setOverdueTasks(r.tasks));
+        taskSearchService.getIncomingTasks().then(r => setIncomingTasks(r.tasks));
     }, []);
 
     return (
-        <OverdueTasksPanel>
+        <IncomingTasksPanel>
             <h3>
-                <TriangleAlert /> Overdue tasks
+                Incoming tasks
             </h3>
             <ProjectsList className="projects-list">
                 {projectsList.map(project => (
                     <projects.TasksInProjectComponent key={project.id} project={project} />
                 ))}
             </ProjectsList>
-        </OverdueTasksPanel>
+        </IncomingTasksPanel>
     );
 }
