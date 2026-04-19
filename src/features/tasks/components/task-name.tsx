@@ -56,6 +56,12 @@ const IconDisplay = styled.span<{ color: string }>`
         inset 0 1px 0 rgba(255, 255, 255, 0.3)
 `;
 
+const NameDisplay = styled.span`
+    color: hsl(${themeTokens.generalColors.information});
+    filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
+    mix-blend-mode: luminosity;
+`;
+
 export default function TaskNameComponent({ task }: TaskNameProps) {
     function onClick() {
         alert(`Task ${task.id} clicked!`);
@@ -64,7 +70,7 @@ export default function TaskNameComponent({ task }: TaskNameProps) {
     return (
         <TaskDisplay onClick={onClick}>
             <IconDisplay color={task.status.color} />
-            {task.name}
+            <NameDisplay>{task.name}</NameDisplay>
         </TaskDisplay>
     );
 }
