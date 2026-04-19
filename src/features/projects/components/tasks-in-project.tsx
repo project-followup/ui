@@ -18,9 +18,9 @@ export default function TasksInProjectComponent({ project }: TasksInProjectProps
     return (
         <CollapsiblePanel defaultExpanded>
             <CollapsiblePanel.Title>
-                <h2>
+                <h3>
                     {project.name}
-                </h2>
+                </h3>
             </CollapsiblePanel.Title>
             <CollapsiblePanel.Content>
                 <TaskListPanel>

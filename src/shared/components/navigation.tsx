@@ -50,6 +50,10 @@ const Notifications = styled.ul`
     }
 `;
 
+const PageTitle = styled.h1`
+    display: none;
+`;
+
 const Logo = styled.img`
     height: 4rem;
 `;
@@ -59,7 +63,7 @@ export default function NavigationComponent() {
     return (<TopBar>
         <Navigation>
             <NavLink to="/">
-                <h1>Project Follow-Up</h1>
+                <PageTitle>Project Follow-Up</PageTitle>
                 <Logo src={logo} alt="Project FollowUp Logo" />
             </NavLink>
             <MenuItems>
