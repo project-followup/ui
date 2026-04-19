@@ -9,4 +9,5 @@ export interface Task {
     name: string;
     status: TaskStatus;
     projectId: string;
+    dueDate?: Date;
 }

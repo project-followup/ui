@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { themeTokens } from "@shared/hooks/use-theme";
-import * as projects from "@ft_projects/index";
-import * as projectModels from "@ft_projects/types/models";
 import * as models from "@ft_tasks/types/models";
 import { taskSearchService } from "@ft_tasks/index";
 import { useEffect, useState } from "react";
+import TableComponent from "@shared/components/lists/table";
+import { toDateOnlyString } from "@shared/utils/dates";
 
 const IncomingTasksPanel = styled.div`
     padding: 1rem;
@@ -17,31 +17,8 @@ const IncomingTasksPanel = styled.div`
     }
 `;
 
-const ProjectsList = styled.div`
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-`;
-
 export default function IncomingTasksComponent() {
     const [incomingTasks, setIncomingTasks] = useState<models.Task[]>([]);
-
-    const projectIds = incomingTasks.reduce((acc, task) => {
-        if (!acc.includes(task.projectId)) {
-            acc.push(task.projectId);
-        }
-        return acc;
-    }, [] as string[]);
-
-    const projectsList = projectIds.map(id => {
-        const tasks = incomingTasks.filter(task => task.projectId === id);
-        return {
-            id,
-            name: `Project ${id}`,
-            description: `This is project ${id}.`,
-            tasks
-        } as projectModels.ProjectWithTasks;
-    });
 
     useEffect(() => {
         taskSearchService.getIncomingTasks().then(r => setIncomingTasks(r.tasks));
@@ -52,11 +29,15 @@ export default function IncomingTasksComponent() {
             <h3>
                 Incoming tasks
             </h3>
-            <ProjectsList className="projects-list">
-                {projectsList.map(project => (
-                    <projects.TasksInProjectComponent key={project.id} project={project} />
-                ))}
-            </ProjectsList>
+            <TableComponent<models.Task>
+                columns={[
+                    { header: "Title", valueExtractor: task => task.name, order: 1 },
+                    { header: "Status", valueExtractor: task => task.status.name, order: 2 },
+                    { header: "Due date", valueExtractor: task => task.dueDate ? toDateOnlyString(task.dueDate) : '', order: 3 },
+                    { header: "", valueExtractor: () => <button>View</button>, order: 4 }
+                ]}
+                data={incomingTasks}
+            />
         </IncomingTasksPanel>
     );
 }
