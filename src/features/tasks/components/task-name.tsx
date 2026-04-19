@@ -1,11 +1,9 @@
 import styled from "@emotion/styled";
-import type { TaskStatus } from "@ft_tasks/types/model";
+import type { Task } from "@ft_tasks/types/models";
 import { themeTokens } from "@shared/hooks/use-theme";
 
 export interface TaskNameProps {
-    id: string;
-    name: string;
-    status: TaskStatus;
+    task: Task;
 }
 
 const TaskDisplay = styled.a`
@@ -43,10 +41,10 @@ const TaskDisplay = styled.a`
 `;
 
 const IconDisplay = styled.span<{ color: string }>`
-    background: radial-gradient(circle at center, white, ${props => props.color} 40%);
+    background: radial-gradient(circle at 45% 45%, white, ${props => props.color} 35%);
     display: inline-block;
-    min-width: 0.9em;
-    min-height: 0.9em;
+    min-width: 1em;
+    min-height: 1em;
     border-radius: 9999px;
     border: solid grey 1px;
     vertical-align: baseline;
@@ -58,15 +56,15 @@ const IconDisplay = styled.span<{ color: string }>`
         inset 0 1px 0 rgba(255, 255, 255, 0.3)
 `;
 
-export default function TaskNameComponent({ id, name, status }: TaskNameProps) {
+export default function TaskNameComponent({ task }: TaskNameProps) {
     function onClick() {
-        alert(`Task ${id} clicked!`);
+        alert(`Task ${task.id} clicked!`);
     }
 
     return (
         <TaskDisplay onClick={onClick}>
-            <IconDisplay color={status.color} />
-            {name}
+            <IconDisplay color={task.status.color} />
+            {task.name}
         </TaskDisplay>
     );
 }

@@ -17,7 +17,8 @@
       "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/shared/*"],
       "@pages/*": ["./src/pages/*"],
-      "@ft_tasks/*": ["./src/features/tasks/*"]
+      "@ft_tasks/*": ["./src/features/tasks/*"],
+      "@ft_projects/*": ["./src/features/projects/*"]
     },
     "jsx": "react-jsx",
 
