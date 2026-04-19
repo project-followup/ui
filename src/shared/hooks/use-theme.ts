@@ -12,6 +12,7 @@ export const themeTokens = {
     },
     generalColors: {
         information: 'var(--generalColors-information)',
+        error: 'var(--generalColors-error)',
     },
     textColors: {
         primary: 'var(--textColors-primary)',
