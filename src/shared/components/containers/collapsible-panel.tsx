@@ -17,47 +17,21 @@ interface ContentProps {
 }
 
 const PanelContainer = styled.div`
-    border-radius: 0.5rem;
-    border: solid black 1px;
 `;
 
 const PanelHeader = styled.div<{ isExpanded: boolean }>`
-    width: 100%;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-left-radius: ${props => props.isExpanded ? '0' : '0.5rem'};
-    border-bottom-right-radius: ${props => props.isExpanded ? '0' : '0.5rem'};
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
 `;
 
 const TitleContainer = styled.div`
-  flex: 1;
 `;
 
 const IconContainer = styled.div<{ isExpanded: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: #718096;
-  transition: transform 0.2s ease;
-  transform: ${props => props.isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)'};
 `;
 
 const PanelContent = styled.div<{ isExpanded: boolean }>`
-  max-height: ${props => props.isExpanded ? 'none' : '0'};
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.2s ease;
-  opacity: ${props => props.isExpanded ? '1' : '0'};
 `;
 
 const ContentInner = styled.div`
-  padding: 0.5rem;
 `;
 
 // Title component

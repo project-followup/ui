@@ -1,4 +1,3 @@
-import './landing-page.scss'
 import { Button } from '@shared/controls/Button'
 import { useAuth } from '@shared/hooks/use-auth';
 

@@ -7,14 +7,9 @@ import { taskSearchService } from "@ft_tasks/index";
 import { useEffect, useState } from "react";
 
 const OverdueTasksPanel = styled.div`
-    padding: 1rem;
-    border: solid black 1px;
 `;
 
 const ProjectsList = styled.div`
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
 `;
 
 export default function OverdueTasksComponent() {

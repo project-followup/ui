@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
 const Footer = styled.footer`
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 `;
 
 export default function FooterComponent() {

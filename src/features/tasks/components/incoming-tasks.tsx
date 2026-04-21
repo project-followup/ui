@@ -5,14 +5,7 @@ import { useEffect, useState } from "react";
 import TableComponent from "@shared/components/lists/table";
 import { toDateOnlyString } from "@shared/utils/dates";
 
-const IncomingTasksPanel = styled.div`
-    padding: 1rem;
-
-    & > h3 {
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-    }
+const IncomingTasksPanel = styled.div`=
 `;
 
 export default function IncomingTasksComponent() {

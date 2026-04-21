@@ -4,10 +4,6 @@ import * as models from "../types/models";
 import { CollapsiblePanel } from "@shared/components";
 
 const TaskListPanel = styled.div`
-    padding: 1rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
 `;
 
 export interface TasksInProjectProps {

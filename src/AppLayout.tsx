@@ -1,15 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { LandingPage } from "@pages/landing-page/landing-page";
-import './AppLayout.scss'
 import NavigationComponent from "@shared/components/navigation";
 import FooterComponent from "@shared/components/footer";
 import { useAuth } from "@shared/hooks/use-auth";
 import styled from '@emotion/styled';
 
 const BodyContainer = styled.div`
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 1rem;
 `;
 
 export default function AppLayoutComponent() {
