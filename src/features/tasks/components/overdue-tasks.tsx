@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { themeTokens } from "@shared/hooks/use-theme";
 import { TriangleAlert } from "lucide-react";
 import * as projects from "@ft_projects/index";
 import * as projectModels from "@ft_projects/types/models";
@@ -9,30 +8,7 @@ import { useEffect, useState } from "react";
 
 const OverdueTasksPanel = styled.div`
     padding: 1rem;
-
-    @keyframes changeColor {
-        0% {
-            background-color: hsl(${themeTokens.generalColors.error});
-        }
-
-        50% {
-            background-color: hsl(${themeTokens.backgroundColors.panelHover});
-        }
-
-        100% {
-            background-color: hsl(${themeTokens.generalColors.error});
-        }
-    }
-
-    & > h3 {
-        background-color: hsl(${themeTokens.generalColors.error});
-        animation: changeColor ease;
-        animation-iteration-count: infinite;
-        animation-duration: 2s;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-    }
+    border: solid black 1px;
 `;
 
 const ProjectsList = styled.div`

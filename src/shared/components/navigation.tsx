@@ -2,12 +2,8 @@ import { NavLink } from "react-router-dom";
 import { Bell, SquareArrowRightExit } from 'lucide-react';
 import logo from "@assets/logo.svg";
 import styled from '@emotion/styled';
-import { themeTokens } from "@shared/hooks/use-theme";
-import ThemeSwitcher from "./theme-switcher";
 
 const TopBar = styled.div`
-    background-color: hsl(${themeTokens.backgroundColors.panel});
-    color: hsl(${themeTokens.textColors.primary});
 `;
 
 const Navigation = styled.nav`
@@ -24,7 +20,6 @@ const MenuItems = styled.div`
 `;
 
 const NavLinkStyled = styled(NavLink)`
-    color: hsl(${themeTokens.textColors.primary});
     text-decoration: none;
     vertical-align: middle;
     padding-top: 1.5rem;
@@ -32,11 +27,7 @@ const NavLinkStyled = styled(NavLink)`
     padding-left: 2rem;
     padding-right: 2rem;
     &.active {
-        font-weight: bold;
-    }
-
-    &:hover {
-        background-color: hsl(${themeTokens.backgroundColors.panelHover});
+        color: gray;
     }
 `;
 
@@ -75,7 +66,6 @@ export default function NavigationComponent() {
             <Notifications>
                 <NavLinkStyled to="/logout" aria-label="Log out"><SquareArrowRightExit /></NavLinkStyled>
                 <NavLinkStyled to="/notifications" aria-label="View notifications"><Bell /></NavLinkStyled>
-                <ThemeSwitcher />
             </Notifications>
         </Navigation>
     </TopBar>);

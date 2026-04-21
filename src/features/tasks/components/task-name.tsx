@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { themeTokens } from "@shared/hooks/use-theme";
 import { type TaskStatus } from "@ft_tasks/types/models";
 
 export interface Task {
@@ -14,37 +13,12 @@ export interface TaskNameProps {
 }
 
 const TaskDisplay = styled.a`
-    background-color: hsl(${themeTokens.generalColors.information});
     padding: 0.5em 1em;
     border-radius: 9999px;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    border: none;
-    box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.1),
-        0 1px 2px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    background-image: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        transparent 50%, 
-        rgba(0, 0, 0, 0.05) 100%);
-    transition: all 0.2s ease;
-
-    &:hover {
-        transform: translateY(-1px);
-        box-shadow: 
-            0 4px 8px rgba(0, 0, 0, 0.15),
-            0 2px 4px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    }
-
-    &:active {
-        transform: translateY(0);
-        box-shadow: 
-            0 1px 2px rgba(0, 0, 0, 0.2),
-            inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+    border: solid black 1px;
 `;
 
 const IconDisplay = styled.span<{ color: string }>`
@@ -64,9 +38,6 @@ const IconDisplay = styled.span<{ color: string }>`
 `;
 
 const NameDisplay = styled.span`
-    color: hsl(${themeTokens.generalColors.information});
-    filter: invert(1) grayscale(1) brightness(1.3) contrast(9000);
-    mix-blend-mode: luminosity;
 `;
 
 export default function TaskNameComponent({ task }: TaskNameProps) {

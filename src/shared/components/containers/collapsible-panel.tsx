@@ -1,7 +1,6 @@
 import { useState, type ReactNode, type ReactElement, Children } from 'react';
 import styled from '@emotion/styled';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { themeTokens } from '@shared/hooks/use-theme';
 
 interface CollapsiblePanelProps {
   children: ReactNode;
@@ -18,13 +17,12 @@ interface ContentProps {
 }
 
 const PanelContainer = styled.div`
-    background-color: hsl(${themeTokens.backgroundColors.panel});
     border-radius: 0.5rem;
+    border: solid black 1px;
 `;
 
 const PanelHeader = styled.div<{ isExpanded: boolean }>`
     width: 100%;
-    background-color: hsl(${themeTokens.backgroundColors.panelHover});
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     border-bottom-left-radius: ${props => props.isExpanded ? '0' : '0.5rem'};

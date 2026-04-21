@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { themeTokens } from "@shared/hooks/use-theme";
 import * as models from "@ft_tasks/types/models";
 import { taskSearchService } from "@ft_tasks/index";
 import { useEffect, useState } from "react";
@@ -10,7 +9,6 @@ const IncomingTasksPanel = styled.div`
     padding: 1rem;
 
     & > h3 {
-        background-color: hsl(${themeTokens.backgroundColors.panelHover});
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         margin-bottom: 1rem;

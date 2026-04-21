@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
-import { themeTokens } from "@shared/hooks/use-theme";
 
 const Footer = styled.footer`
-    background-color: hsl(${themeTokens.backgroundColors.panel});
-    color: hsl(${themeTokens.textColors.primary});
     padding-top: 1rem;
     padding-bottom: 1rem;
 `;
