@@ -1,0 +1,8 @@
+body {
+    --base-hue: 360;
+    --base-saturation: 0%;
+    --backgroundColors-primary: var(--base-hue) var(--base-saturation) 70%;
+    --backgroundColors-secondary: var(--base-hue) var(--base-saturation) 50%;
+
+    --textColors-primary: var(--base-hue) var(--base-saturation) 20%;
+}
