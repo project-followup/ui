@@ -12,10 +12,15 @@ export interface TaskNameProps {
     task: Task;
 }
 
-const TaskDisplay = styled.a`
-`;
+interface TaskDisplayProps {
+    backgroundColor: string;
+}
 
-const IconDisplay = styled.span<{ color: string }>`
+const TaskDisplay = styled.a<TaskDisplayProps>`
+    background-color: ${props => props.backgroundColor};
+    padding: 0.5em 1em;
+    border-radius: 9999px;
+    cursor: pointer;
 `;
 
 const NameDisplay = styled.span`
@@ -27,8 +32,7 @@ export default function TaskNameComponent({ task }: TaskNameProps) {
     }
 
     return (
-        <TaskDisplay onClick={onClick}>
-            <IconDisplay color={task.status.color} />
+        <TaskDisplay onClick={onClick} backgroundColor={task.status.color}>
             <NameDisplay>{task.name}</NameDisplay>
         </TaskDisplay>
     );

@@ -1,8 +1,76 @@
 body {
-    --base-hue: 360;
-    --base-saturation: 0%;
-    --backgroundColors-primary: var(--base-hue) var(--base-saturation) 70%;
-    --backgroundColors-secondary: var(--base-hue) var(--base-saturation) 50%;
+    // Base hues
+    --brand-color-hue: 263;
+    --success-color-hue: 120;
+    --warning-color-hue: 68;
+    --error-color-hue: 0;
+    --information-color-hue: 210;
+    --neutral-color-hue: 280;
 
-    --textColors-primary: var(--base-hue) var(--base-saturation) 20%;
+    // Middle color properties
+    --middle-color-saturation: 83%;
+    --middle-color-lightness: 39%;
+
+    // Brand colors
+    --brand-color-100: var(--brand-color-hue) 31% 79%;
+    --brand-color-200: var(--brand-color-hue) 36% 62%;
+    --brand-color-300: var(--brand-color-hue) 42% 50%;
+    --brand-color-400: var(--brand-color-hue) 65% 43%;
+    --brand-color-500: var(--brand-color-hue) var(--middle-color-saturation) var(--middle-color-lightness);
+    --brand-color-600: var(--brand-color-hue) 87% 36%;
+    --brand-color-700: var(--brand-color-hue) 89% 32%;
+    --brand-color-800: var(--brand-color-hue) 90% 28%;
+    --brand-color-900: var(--brand-color-hue) 92% 23%;
+
+    // Supporting colors
+    --success-color-100: var(--success-color-hue) 31% 79%;
+    --success-color-200: var(--success-color-hue) 36% 62%;
+    --success-color-300: var(--success-color-hue) 42% 50%;
+    --success-color-400: var(--success-color-hue) 65% 43%;
+    --success-color-500: var(--success-color-hue) var(--middle-color-saturation) var(--middle-color-lightness);
+    --success-color-600: var(--success-color-hue) 87% 36%;
+    --success-color-700: var(--success-color-hue) 89% 32%;
+    --success-color-800: var(--success-color-hue) 90% 28%;
+    --success-color-900: var(--success-color-hue) 92% 23%;
+
+    --warning-color-100: var(--warning-color-hue) 60% 80%;
+    --warning-color-200: var(--warning-color-hue) 65% 75%;
+    --warning-color-300: var(--warning-color-hue) 70% 65%;
+    --warning-color-400: var(--warning-color-hue) 75% 60%;
+    --warning-color-500: var(--warning-color-hue) 80% 55%; //var(--middle-color-saturation) var(--middle-color-lightness);
+    --warning-color-600: var(--warning-color-hue) 85% 50%;
+    --warning-color-700: var(--warning-color-hue) 90% 45%;
+    --warning-color-800: var(--warning-color-hue) 95% 40%;
+    --warning-color-900: var(--warning-color-hue) 100% 35%;
+
+    --error-color-100: var(--error-color-hue) 31% 79%;
+    --error-color-200: var(--error-color-hue) 36% 62%;
+    --error-color-300: var(--error-color-hue) 42% 50%;
+    --error-color-400: var(--error-color-hue) 65% 43%;
+    --error-color-500: var(--error-color-hue) var(--middle-color-saturation) var(--middle-color-lightness);
+    --error-color-600: var(--error-color-hue) 87% 36%;
+    --error-color-700: var(--error-color-hue) 89% 32%;
+    --error-color-800: var(--error-color-hue) 90% 28%;
+    --error-color-900: var(--error-color-hue) 92% 23%;
+
+    --information-color-100: var(--information-color-hue) 31% 79%;
+    --information-color-200: var(--information-color-hue) 36% 62%;
+    --information-color-300: var(--information-color-hue) 42% 50%;
+    --information-color-400: var(--information-color-hue) 65% 43%;
+    --information-color-500: var(--information-color-hue) var(--middle-color-saturation) var(--middle-color-lightness);
+    --information-color-600: var(--information-color-hue) 87% 36%;
+    --information-color-700: var(--information-color-hue) 89% 32%;
+    --information-color-800: var(--information-color-hue) 90% 28%;
+    --information-color-900: var(--information-color-hue) 92% 23%;
+
+    // Neutral colors
+    --neutral-color-100: var(--neutral-color-hue) 6% 69%;
+    --neutral-color-200: var(--neutral-color-hue) 4% 58%;
+    --neutral-color-300: var(--neutral-color-hue) 5% 44%;
+    --neutral-color-400: var(--neutral-color-hue) 7% 31%;
+    --neutral-color-500: var(--neutral-color-hue) 11% 18%;
+    --neutral-color-600: var(--neutral-color-hue) 19% 12%;
+    --neutral-color-700: var(--neutral-color-hue) 33% 7%;
+    --neutral-color-800: var(--neutral-color-hue) 52% 5%;
+    --neutral-color-900: var(--neutral-color-hue) 76% 3%;
 }

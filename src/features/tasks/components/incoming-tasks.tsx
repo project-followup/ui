@@ -1,26 +1,24 @@
 import styled from "@emotion/styled";
-import * as models from "@ft_tasks/types/models";
-import { taskSearchService } from "@ft_tasks/index";
-import { useEffect, useState } from "react";
-import TableComponent from "@shared/components/lists/table";
-import { toDateOnlyString } from "@shared/utils/dates";
+// import * as models from "@ft_tasks/types/models";
+// import { taskSearchService } from "@ft_tasks/index";
+// import { useEffect, useState } from "react";
 
 const IncomingTasksPanel = styled.div`=
 `;
 
 export default function IncomingTasksComponent() {
-    const [incomingTasks, setIncomingTasks] = useState<models.Task[]>([]);
+    // const [incomingTasks, setIncomingTasks] = useState<models.Task[]>([]);
 
-    useEffect(() => {
-        taskSearchService.getIncomingTasks().then(r => setIncomingTasks(r.tasks));
-    }, []);
+    // useEffect(() => {
+    //     taskSearchService.getIncomingTasks().then(r => setIncomingTasks(r.tasks));
+    // }, []);
 
     return (
         <IncomingTasksPanel>
             <h3>
                 Incoming tasks
             </h3>
-            <TableComponent<models.Task>
+            {/* <TableComponent<models.Task>
                 columns={[
                     { header: "Title", valueExtractor: task => task.name, order: 1 },
                     { header: "Status", valueExtractor: task => task.status.name, order: 2 },
@@ -28,7 +26,7 @@ export default function IncomingTasksComponent() {
                     { header: "", valueExtractor: () => <button>View</button>, order: 4 }
                 ]}
                 data={incomingTasks}
-            />
+            /> */}
         </IncomingTasksPanel>
     );
 }

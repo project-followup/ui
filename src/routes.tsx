@@ -3,6 +3,7 @@ import AppLayoutComponent from './AppLayout';
 import LogoutPage from "@pages/logout/logout-page";
 import { ProtectedRoute } from "@shared/components/protected-route";
 import Home from "@pages/home/home";
+import ColorsViewer from "@pages/colors-viewer";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,12 @@ export const router = createBrowserRouter([
         index: true,
         element: <ProtectedRoute>
           <Home />
+        </ProtectedRoute>
+      },
+      {
+        path: 'colors-viewer',
+        element: <ProtectedRoute>
+          <ColorsViewer />
         </ProtectedRoute>
       },
       {

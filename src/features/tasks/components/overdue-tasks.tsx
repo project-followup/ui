@@ -5,11 +5,35 @@ import * as projectModels from "@ft_projects/types/models";
 import * as models from "@ft_tasks/types/models";
 import { taskSearchService } from "@ft_tasks/index";
 import { useEffect, useState } from "react";
+import { themeTokens } from "@shared/types/themes";
 
-const OverdueTasksPanel = styled.div`
+const Container = styled.div`
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+`;
+
+const Header = styled.div`
+    background-color: hsl(${themeTokens.backgroundColors.primary});
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding: 0.5em;
+`;
+
+const Content = styled.div`
+    background-color: hsl(${themeTokens.backgroundColors.secondary});
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
 `;
 
 const ProjectsList = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
 `;
 
 export default function OverdueTasksComponent() {
@@ -37,15 +61,19 @@ export default function OverdueTasksComponent() {
     }, []);
 
     return (
-        <OverdueTasksPanel>
-            <h3>
-                <TriangleAlert /> Overdue tasks
-            </h3>
-            <ProjectsList className="projects-list">
-                {projectsList.map(project => (
-                    <projects.TasksInProjectComponent key={project.id} project={project} />
-                ))}
-            </ProjectsList>
-        </OverdueTasksPanel>
+        <Container>
+            <Header>
+                <h3>
+                    <TriangleAlert /> Your overdue tasks
+                </h3>
+            </Header>
+            <Content>
+                <ProjectsList className="projects-list">
+                    {projectsList.map(project => (
+                        <projects.TasksInProjectComponent key={project.id} project={project} />
+                    ))}
+                </ProjectsList>
+            </Content>
+        </Container>
     );
 }

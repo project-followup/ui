@@ -40,7 +40,7 @@ export class TaskSearchServiceImpl implements TaskSearchService {
                 id: "4",
                 name: "Task 4",
                 status: { id: "1", name: 'Overdue', color: "red" },
-                projectId: "1",
+                projectId: "3",
                 dueDate: new Date(Date.now() - 24 * 60 * 60 * 1000) // yesterday
             },
             {

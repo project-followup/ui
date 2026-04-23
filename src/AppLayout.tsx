@@ -38,6 +38,9 @@ const Logo = styled.img`
 const BodyContainer = styled.div`
   width: 80%;
   margin: 0 auto;
+  padding: 1em;
+  border-left: 1px solid hsl(${themeTokens.backgroundColors.primary});
+  border-right: 1px solid hsl(${themeTokens.backgroundColors.primary});
 `;
 
 export default function AppLayoutComponent() {
